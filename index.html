@@ -5,85 +5,148 @@
   <title>Smart Money Trading Strategy – Kursus Mobile MT4/MT5</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Basic Reset and Styling */
-    body {
-      font-family: Arial, sans-serif;
+    /* Reset and Base Styling */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #f9f9f9;
       color: #333;
       line-height: 1.6;
     }
     .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
+    /* Header Section */
     header {
-      background: #00796b;
+      background: linear-gradient(135deg, #00695c, #00897b);
       color: #fff;
-      padding: 30px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
     header h1 {
-      margin: 0;
-      font-size: 2em;
+      font-size: 2.8em;
+      margin-bottom: 20px;
     }
     header p {
       font-size: 1.2em;
-      margin: 10px 0 0;
+      margin-bottom: 30px;
     }
     .cta {
       display: inline-block;
       background: #d32f2f;
       color: #fff;
-      padding: 15px 25px;
+      padding: 15px 30px;
       text-decoration: none;
-      font-size: 1.1em;
-      border-radius: 5px;
-      margin: 20px 0;
+      font-size: 1.2em;
+      border-radius: 50px;
       transition: background 0.3s ease;
     }
     .cta:hover {
       background: #b71c1c;
     }
+    /* Section Styling */
     section {
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
+      padding: 40px 0;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: center;
     }
     section:last-child {
       border-bottom: none;
     }
     h2 {
-      color: #00796b;
-      margin-top: 0;
+      color: #00695c;
+      font-size: 2em;
+      margin-bottom: 20px;
     }
-    ul {
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1em;
+    }
+    /* Benefits Section */
+    .benefits ul {
       list-style: none;
-      padding-left: 0;
+      margin-top: 20px;
+      padding: 0;
     }
-    ul li {
+    .benefits ul li {
       background: #e0f2f1;
       margin: 10px 0;
-      padding: 10px;
-      border-radius: 3px;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: left;
     }
+    /* Product Graphics Section */
+    #product-graphics {
+      padding: 40px 0;
+      background: #f0f4f5;
+    }
+    .graphics-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .graphics-container img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    /* Pricing Section */
     .pricing {
       text-align: center;
       font-size: 1.3em;
-      margin: 20px 0;
+      margin: 40px 0;
     }
-    .limited-offer {
+    .pricing .limited-offer {
       color: #d32f2f;
       font-weight: bold;
-      font-size: 1.5em;
+      font-size: 2em;
+      margin-bottom: 10px;
     }
+    /* CTA Section */
+    .cta-section {
+      margin: 40px 0;
+    }
+    /* Footer */
     footer {
+      background: #424242;
+      color: #fff;
       text-align: center;
-      padding: 15px 0;
+      padding: 20px 0;
       font-size: 0.9em;
-      color: #777;
+    }
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .cta {
+        font-size: 1em;
+        padding: 12px 24px;
+      }
+      h2 {
+        font-size: 1.6em;
+      }
+      .content {
+        font-size: 1em;
+      }
+      .graphics-container {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -92,47 +155,66 @@
     <!-- Hero Section -->
     <header>
       <h1>Smart Money Trading Strategy</h1>
-      <p>Kursus Mobile MT4/MT5 – Panduan & Video Lengkap</p>
+      <p>Kursus Mobile MT4/MT5 – Panduan Lengkap & Video Tutorial</p>
       <a href="https://buy.stripe.com/9AQ9DJ3f40cq16UaEG" class="cta">Dapatkan Akses Sekarang</a>
     </header>
     
     <!-- Overview Section -->
-    <section>
+    <section id="overview">
       <h2>Mengapa Pilih Kursus Ini?</h2>
-      <p>Kuasai strategi dagangan profesional dengan panduan langkah demi langkah yang direka khas untuk pengguna MT4/MT5 secara mobile. Kursus ini sesuai untuk pemula dan trader berpengalaman yang ingin meningkatkan keupayaan dagangan mereka.</p>
+      <div class="content">
+        <p>Ingin menguasai teknik dagangan profesional? Kursus ini direka khas untuk pengguna MT4/MT5 secara mobile. Belajar langkah demi langkah melalui video tutorial dan panduan PDF yang mudah difahami. Sesuai untuk pemula dan trader berpengalaman yang ingin meningkatkan kemahiran dagangan mereka.</p>
+      </div>
     </section>
     
     <!-- Benefits Section -->
-    <section>
+    <section id="benefits">
       <h2>Kelebihan Kursus</h2>
-      <ul>
-        <li>Panduan komprehensif dalam bentuk PDF & video tutorial.</li>
-        <li>Mudah diikuti – direka untuk pengguna mobile MT4/MT5.</li>
-        <li>Bonus eBook eksklusif untuk mendalami konsep-konsep dagangan.</li>
-        <li>Tawaran terhad: Harga istimewa hanya RM79!</li>
-      </ul>
+      <div class="content benefits">
+        <ul>
+          <li>Panduan komprehensif dalam bentuk PDF & video tutorial.</li>
+          <li>Mudah diikuti – direka khas untuk pengguna mobile MT4/MT5.</li>
+          <li>Bonus eBook eksklusif untuk mendalami rahsia dagangan profesional.</li>
+          <li>Tawaran terhad: Harga istimewa hanya RM79!</li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- Product Graphics Section -->
+    <section id="product-graphics">
+      <h2>Gambar Produk</h2>
+      <div class="graphics-container">
+        <img src="1.png" alt="Grafik Produk 1">
+        <img src="2222.png" alt="Grafik Produk 2">
+        <img src="23233.png" alt="Grafik Produk 3">
+        <img src="3.png" alt="Grafik Produk 4">
+      </div>
     </section>
     
     <!-- How It Works Section -->
-    <section>
+    <section id="how-it-works">
       <h2>Cara Kursus Berfungsi</h2>
-      <p>Setelah anda membuat pembelian, anda akan menerima akses segera ke kursus digital kami melalui email atau mesej. Kursus ini merangkumi:</p>
-      <ul>
-        <li>PDF panduan langkah demi langkah</li>
-        <li>Video tutorial interaktif</li>
-        <li>Bonus eBook dengan rahsia dagangan profesional</li>
-      </ul>
-      <p>Kursus ini boleh diakses bila-bila masa dan di mana sahaja, mengikut keselesaan anda.</p>
+      <div class="content">
+        <p>Selepas pembelian, anda akan menerima akses segera ke kursus digital kami melalui email atau mesej. Kursus ini merangkumi:</p>
+        <ul style="list-style: none; padding: 0; text-align: left; max-width: 600px; margin: 20px auto;">
+          <li>• Panduan PDF langkah demi langkah</li>
+          <li>• Video tutorial interaktif</li>
+          <li>• Bonus eBook dengan rahsia dagangan profesional</li>
+        </ul>
+        <p>Kursus ini boleh diakses bila-bila masa dan di mana sahaja mengikut keselesaan anda.</p>
+      </div>
     </section>
     
     <!-- Pricing Section -->
-    <section class="pricing">
-      <p class="limited-offer">Tawaran Terhad: RM79</p>
-      <p>Harga Standard: RM119</p>
+    <section id="pricing">
+      <div class="pricing">
+        <p class="limited-offer">Tawaran Terhad: RM79</p>
+        <p>Harga Standard: RM119</p>
+      </div>
     </section>
     
     <!-- Call-to-Action Section -->
-    <section style="text-align: center;">
+    <section id="cta" class="cta-section">
       <a href="https://buy.stripe.com/9AQ9DJ3f40cq16UaEG" class="cta">Dapatkan Akses Sekarang</a>
     </section>
     
