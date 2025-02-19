@@ -1,75 +1,38 @@
-<!DOCTYPE html>
-<html lang="ms">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Belajar strategi Smart Money Trading di MT4/MT5 Mobile dengan panduan PDF & video tutorial. Sesuai untuk pemula & trader berpengalaman.">
-    <meta name="keywords" content="Smart Money Trading, Forex Malaysia, Kursus MT4 MT5, Belajar Trading, Strategi Dagangan">
-    <title>Smart Money Market Strategy - MT4/MT5 Mobile</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
-        .container { padding: 20px; }
-        .cta-button { background-color: #ff8800; color: white; padding: 15px 30px; text-decoration: none; font-size: 1.2em; border-radius: 5px; }
-        .cta-button:hover { background-color: #e67e22; }
-        #countdown { font-size: 1.5em; color: red; margin-top: 10px; }
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 50px;
-            font-size: 1.2em;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            text-decoration: none;
-        }
-        .menu-toggle { display: none; }
-        @media screen and (max-width: 768px) {
-            .menu-toggle { display: block; cursor: pointer; font-size: 1.5em; }
-            .nav-links { display: none; }
-            .nav-links.active { display: block; }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Smart Money Market Strategy</h1>
-        <p>Belajar strategi dagangan MT4/MT5 Mobile dengan mudah!</p>
-        <p><strong>Harga Promosi: RM79 (Masa Terhad!)</strong></p>
-        <p id="countdown"></p>
-        <a href="#" class="cta-button">Dapatkan Akses Sekarang</a>
-        <p><strong>Jaminan Wang Dikembalikan!</strong></p>
-    </div>
-    
-    <button id="menu-toggle" class="menu-toggle">☰ Menu</button>
-    <ul id="menu" class="nav-links">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#benefits">Kelebihan</a></li>
-        <li><a href="#testimonials">Testimoni</a></li>
-    </ul>
-    
-    <a href="https://wa.me/60123456789" class="whatsapp-button">Chat di WhatsApp</a>
-    
-    <script>
-        let countDownDate = new Date("Feb 29, 2025 23:59:59").getTime();
-        let x = setInterval(function() {
-            let now = new Date().getTime();
-            let distance = countDownDate - now;
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("countdown").innerHTML = days + " hari " + hours + " jam " + minutes + " minit " + seconds + " saat ";
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "Tawaran Telah Tamat";
-            }
-        }, 1000);
+import React, { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Timer } from "@/components/ui/timer";
+import { Menu, MenuItem } from "@/components/ui/menu";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 
-        document.getElementById("menu-toggle").addEventListener("click", function() {
-            document.getElementById("menu").classList.toggle("active");
-        });
-    </script>
-</body>
-</html>
+export default function LandingPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  return (
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+      <header className="w-full flex justify-between items-center p-4 bg-white shadow-md">
+        <h1 className="text-xl font-bold">Smart Money Market Strategy</h1>
+        <Button onClick={toggleMenu} className="md:hidden">☰</Button>
+        <nav className={`md:flex ${menuOpen ? "block" : "hidden"}`}>
+          <Menu>
+            <MenuItem>Home</MenuItem>
+            <MenuItem>About</MenuItem>
+            <MenuItem>Contact</MenuItem>
+          </Menu>
+        </nav>
+      </header>
+
+      <main className="flex flex-col items-center mt-6 w-full max-w-3xl">
+        <Card className="w-full text-center p-6">
+          <h2 className="text-2xl font-bold">Pelajari Smart Money Market Strategy</h2>
+          <p className="mt-2 text-gray-700">Strategi profesional dengan panduan lengkap dalam bentuk PDF dan video.</p>
+          <Timer className="mt-4" />
+          <Button className="mt-4 bg-blue-500 text-white">Dapatkan Sekarang</Button>
+          <WhatsAppButton className="mt-2" />
+          <p className="mt-2 text-sm text-gray-600">Jaminan wang dikembalikan jika tidak puas hati!</p>
+        </Card>
+      </main>
+    </div>
+  );
+}
