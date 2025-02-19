@@ -1,36 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Money Market Strategy</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Master Smart Money Market Strategy</h1>
-        <p>Learn how to trade effectively using price action and smart money concepts.</p>
-        <a href="#purchase" class="cta-button">Get the Course Now</a>
-    </header>
-    
-    <section id="about">
-        <h2>Why Choose This Course?</h2>
-        <ul>
-            <li>📘 PDF Guide + Video Course</li>
-            <li>📈 Covers MT4/MT5 Mobile Setup</li>
-            <li>🎯 Smart Money Concepts & Price Action</li>
-            <li>🔒 Private Telegram Group Access</li>
-        </ul>
-    </section>
+import React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
-    <section id="purchase">
-        <h2>Get Instant Access</h2>
-        <p>Special Price: <strong>RM79</strong> (Limited-Time Offer)</p>
-        <a href="https://shopee.com.my/your-product-link" target="_blank" class="cta-button">Buy Now on Shopee</a>
-    </section>
+export default function LandingPage() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
-    <footer>
-        <p>&copy; 2025 Ryan's Trading Course. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    // Here, you can integrate with an email service provider
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-100">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Card className="max-w-md w-full p-6 shadow-lg rounded-2xl bg-white text-center">
+          <img
+            src="/ultimate-weight-loss-guide.png"
+            alt="Ultimate Weight Loss Guide"
+            className="w-full rounded-lg mb-4"
+          />
+          <h1 className="text-2xl font-bold text-gray-800 mb-2">Get Your Free eBook!</h1>
+          <p className="text-gray-600 mb-4">
+            Enter your email below to receive the <b>Ultimate Weight Loss Guide</b> and get exclusive health & fitness tips.
+          </p>
+          {!submitted ? (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="flex items-center border rounded-lg p-2 shadow-sm">
+                <Mail className="w-5 h-5 text-gray-500 mr-2" />
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="w-full border-none focus:ring-0"
+                />
+              </div>
+              <Button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+                Get My Free eBook
+              </Button>
+            </form>
+          ) : (
+            <p className="text-green-600 font-semibold">Thank you! Check your email for the eBook.</p>
+          )}
+        </Card>
+      </motion.div>
+    </div>
+  );
+}
